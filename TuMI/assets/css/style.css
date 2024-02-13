@@ -1606,3 +1606,10 @@ section {
 #footer .footer-links a:hover {
   color: #3498db;
 }
+
+
+/* new */
+
+.accordion-button:not(.collapsed) {
+  background-color: transparent;
+}
