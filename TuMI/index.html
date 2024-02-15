@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+<!--AGREGANDO KATEX DE MANERA ONLINE PARA NO TENER PROBLEMAS DE COMPATIBILIDAD A NIVEL LOCAL-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js"></script>
+
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -172,7 +176,9 @@
                     </h2>
                     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                       <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <strong>This is the first item's accordion body.</strong>
+                        <!--Ecuacion dentro de un p para no alterar el id del div que la contiene porque no se que tiene relacionado la funcion¨--> 
+                        <p id="ecuacion1">La ecuación de Pitágoras es \\(a^2 + b^2 = c^2\\).</p>
                       </div>
                     </div>
                   </div>
@@ -757,7 +763,13 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <!--script para renderizar katex ecuacion1-->
+  <script>
+    window.onload = function() {
+      var element = document.getElementById('ecuacion1');
+      katex.render(element.innerText, element);
+    };
+    </script>
 </body>
 
 </html>
